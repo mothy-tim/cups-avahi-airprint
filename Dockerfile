@@ -1,20 +1,18 @@
-FROM alpine:latest
+FROM ubuntu:latest
 
 # Install the packages we need. Avahi will be included
-RUN echo "http://nl.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories &&\
-	apk add --update cups \
-	cups-libs \
+RUN apt-get update \
+&& apt-get install -y \
+	cups \
 	cups-pdf \
 	cups-client \
 	cups-filters \
-	cups-dev \
 	ghostscript \
-	avahi \
+	avahi-daemon \
 	inotify-tools \
 	python \
 	python-dev \
-	py-pip \
-	build-base \
+    python-cups \
 	foomatic-db-compressed-ppds \
 	printer-driver-all \
 	openprinting-ppds \
@@ -23,9 +21,8 @@ RUN echo "http://nl.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositorie
 	hplip \
 	wget \
 	rsync \
-	&& pip --no-cache-dir install --upgrade pip \
-	&& pip install pycups \
-	&& rm -rf /var/cache/apk/*
+	&& apt-get clean \
+	&& rm -rf /var/lib/apt/lists/*
 
 # This will use port 631
 EXPOSE 631
