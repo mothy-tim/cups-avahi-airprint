@@ -15,6 +15,12 @@ RUN echo "http://nl.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositorie
 	python-dev \
 	py-pip \
 	build-base \
+	foomatic-db-compressed-ppds \
+	printer-driver-all \
+	openprinting-ppds \
+	hpijs-ppds \
+	hp-ppd \
+	hplip \
 	wget \
 	rsync \
 	&& pip --no-cache-dir install --upgrade pip \
