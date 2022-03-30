@@ -2,7 +2,8 @@ FROM ubuntu:latest
 
 # Install the packages we need. Avahi will be included
 RUN apt-get update \
-&& apt-get install -y \
+&& DEBIAN_FRONTEND=noninteractive \
+	apt-get install -y \
 	cups \
 	cups-pdf \
 	cups-client \
