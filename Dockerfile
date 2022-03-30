@@ -10,9 +10,9 @@ RUN apt-get update \
 	ghostscript \
 	avahi-daemon \
 	inotify-tools \
-	python \
-	python-dev \
-    python-cups \
+	python3 \
+	python3-dev \
+    python3-cups \
 	foomatic-db-compressed-ppds \
 	printer-driver-all \
 	openprinting-ppds \
