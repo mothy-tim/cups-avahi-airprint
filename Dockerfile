@@ -13,7 +13,7 @@ RUN apt-get update \
 	inotify-tools \
 	python3 \
 	python3-dev \
-    python3-cups \
+	python3-cups \
 	foomatic-db-compressed-ppds \
 	printer-driver-all \
 	openprinting-ppds \
